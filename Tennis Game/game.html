@@ -150,13 +150,13 @@ function drawEverything() {
 	drawNet();
 
 	// this is left player paddle          
-	colorRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'blue'); 
+	colorRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'orange'); 
 
-	// this is right computerbluele          
-	colorRect(canvas.width - PADDLE_THICKNESS , paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'blue');
+	// this is right computer paddle          
+	colorRect(canvas.width - PADDLE_THICKNESS , paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'orange');
 
 	// next line draws the ball
-	colorCircle(ballX, ballY, 10, 'red');
+	colorCircle(ballX, ballY, 10, 'white');
 
 	canvasContext.fillText (player1Score, 100, 100);
 	canvasContext.fillText (player2Score, canvas.width -100, 100);
