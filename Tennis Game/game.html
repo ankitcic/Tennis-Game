@@ -1,6 +1,6 @@
 <html>
 
-<canvas id = "gameCanvas" width="1500" height = "900"></canvas>
+<canvas id = "gameCanvas" width="1920" height = "1080"></canvas>
 
 <script>
 var canvas;
@@ -16,10 +16,10 @@ const WINNING_SCORE =100;
 
 var showingWinScreen = false;
 
-var paddle1Y = 250;
-var paddle2Y = 250;
-const PADDLE_THICKNESS = 10;
-const PADDLE_HEIGHT = 100;
+var paddle1Y = 260;
+var paddle2Y = 260;
+const PADDLE_THICKNESS = 12;
+const PADDLE_HEIGHT = 110;
 
 
 function calculateMousePos(evt) {
@@ -150,13 +150,13 @@ function drawEverything() {
 	drawNet();
 
 	// this is left player paddle          
-	colorRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'blue'); 
+	colorRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'green'); 
 
 	// this is right computer paddle          
-	colorRect(canvas.width - PADDLE_THICKNESS , paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'blue');
+	colorRect(canvas.width - PADDLE_THICKNESS , paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'green');
 
 	// next line draws the ball
-	colorCircle(ballX, ballY, 10, 'red');
+	colorCircle(ballX, ballY, 10, 'orange');
 
 	canvasContext.fillText (player1Score, 100, 100);
 	canvasContext.fillText (player2Score, canvas.width -100, 100);
