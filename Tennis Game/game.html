@@ -12,13 +12,13 @@ var ballSpeedY = 4;
 
 var player1Score = 0;
 var player2Score = 0;
-const WINNING_SCORE =100;
+const WINNING_SCORE =10;
 
 var showingWinScreen = false;
 
 var paddle1Y = 260;
 var paddle2Y = 260;
-const PADDLE_THICKNESS = 12;
+const PADDLE_THICKNESS = 14;
 const PADDLE_HEIGHT = 110;
 
 
@@ -44,7 +44,7 @@ function handleMouseClick(evt) {
 window.onload = function() {	
 	canvas = document.getElementById ('gameCanvas');
 	canvasContext = canvas.getContext ('2d');
-	var framePerSecond = 30;
+	var framePerSecond = 45;
 
 	setInterval(function() {
 		moveEverything();
@@ -127,7 +127,7 @@ function moveEverything(){
 
 function drawNet() {
 	for (var i=0; i< canvas.height; i+=40) {
-		colorRect(canvas.width/2-1,i,2,20,'green');
+		colorRect(canvas.width/2-1,i,2,20,'white');
 	}
 }
 
@@ -136,6 +136,7 @@ function drawEverything() {
 	colorRect(0,0,canvas.width, canvas.height, 'black');  
 
 		if (showingWinScreen ) {
+			//changed the color of the paddles
 			canvasContext.fillStyle = 'white';
 			    if(player1Score >= WINNING_SCORE ){
 			    		canvasContext.fillText ("Left Player WON!", canvas.width/2, canvas.height/4);
@@ -150,13 +151,13 @@ function drawEverything() {
 	drawNet();
 
 	// this is left player paddle          
-	colorRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'green'); 
+	colorRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'blue'); 
 
 	// this is right computer paddle          
-	colorRect(canvas.width - PADDLE_THICKNESS , paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'green');
+	colorRect(canvas.width - PADDLE_THICKNESS , paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'red');
 
 	// next line draws the ball
-	colorCircle(ballX, ballY, 10, 'orange');
+	colorCircle(ballX, ballY, 10, 'lime');
 
 	canvasContext.fillText (player1Score, 100, 100);
 	canvasContext.fillText (player2Score, canvas.width -100, 100);
